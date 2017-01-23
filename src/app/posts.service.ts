@@ -20,4 +20,8 @@ export class PostsService {
     }
     return output;
   }
+
+  getPostById(postId: number){
+    return POSTS[postId - 1];
+  }
 }

@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import {Post} from '../post.model';
 import {PostsService} from '../posts.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-list-posts',
@@ -14,7 +15,11 @@ export class ListPostsComponent implements OnInit {
   posts: Post[] = [];
   subpurpllitID: number;
 
-  constructor(private route: ActivatedRoute, private location: Location, private postsService: PostsService) { }
+  constructor(private route: ActivatedRoute, private location: Location, private postsService: PostsService, private router: Router) { }
+
+  goToPostDetail(clickedPost: Post){
+    this.router.navigate(['post', clickedPost.id]);
+  }
 
   ngOnInit() {
     this.route.params.forEach((urlParametersArray) => {
