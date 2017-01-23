@@ -1,16 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { Subpurpllit } from '../subpurpllit.model';
+import {SubpurpllitService} from '../subpurpllit.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-list-subpurpllits',
   templateUrl: './list-subpurpllits.component.html',
-  styleUrls: ['./list-subpurpllits.component.css']
+  styleUrls: ['./list-subpurpllits.component.css'],
+  providers: [SubpurpllitService]
 })
-export class ListSubpurpllitsComponent {
-  subpurpllits: Subpurpllit[] = [
-    new Subpurpllit("Care Bears", "Everything Care Bear Stare", 1),
-    new Subpurpllit("Grizzly Bears", "The new era of bullying?", 2),
-    new Subpurpllit("Rocks", "Is your president smarter than a...", 3),
-    new Subpurpllit("Sandwiches", "Not just for breakfast anymore. Sandwiches.", 4)
-  ];
+export class ListSubpurpllitsComponent implements OnInit {
+  subpurpllits: Subpurpllit[];
+  constructor(private router: Router, private subpurpllitService: SubpurpllitService){}
+
+  ngOnInit(){
+    this.subpurpllits = this.subpurpllitService.getSubpurpllits();
+  }
+
+
 }
