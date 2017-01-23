@@ -24,4 +24,10 @@ export class PostsService {
   getPostById(postId: number){
     return POSTS[postId - 1];
   }
+  getNextId(){
+    return POSTS.length + 1;
+  }
+  addNewPost(newPost:Post){
+    POSTS.push(newPost);
+  }
 }

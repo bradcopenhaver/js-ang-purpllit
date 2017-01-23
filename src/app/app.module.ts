@@ -9,6 +9,7 @@ import { ListSubpurpllitsComponent } from './list-subpurpllits/list-subpurpllits
 import { routing } from './app.routing';
 import { SubpurpllitComponent } from './subpurpllit/subpurpllit.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
+import { NewPostComponent } from './new-post/new-post.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
     ListPostsComponent,
     ListSubpurpllitsComponent,
     SubpurpllitComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    NewPostComponent
   ],
   imports: [
     BrowserModule,

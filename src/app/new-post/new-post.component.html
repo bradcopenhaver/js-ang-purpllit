@@ -1,0 +1,12 @@
+<button class="btn" (click)="newPostForm()">Add New Post</button>
+  <div  *ngIf="newPost">
+    <div class="inputForm">
+      <h3>New Post</h3>
+      <label>Title:</label>
+      <input #title>
+      <label>Text:</label>
+      <input #text>
+      <button class="btn" (click)="addPost(title.value, text.value)">Add Post</button>
+      <button class="btn" (click)="cancel()">Cancel</button>
+    </div>
+  </div>
