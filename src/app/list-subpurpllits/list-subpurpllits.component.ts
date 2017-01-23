@@ -17,5 +17,7 @@ export class ListSubpurpllitsComponent implements OnInit {
     this.subpurpllits = this.subpurpllitService.getSubpurpllits();
   }
 
-
+  goToSubpurpllit(clickedSub: Subpurpllit) {
+    this.router.navigate(['subpurpllit', clickedSub.id]);
+  }
 }

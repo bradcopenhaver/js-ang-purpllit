@@ -10,5 +10,7 @@ export class SubpurpllitService {
   getSubpurpllits() {
     return SUBPURPLLITS;
   }
-
+  getSubById(id: number) {
+    return SUBPURPLLITS[id-1];
+  }
 }
