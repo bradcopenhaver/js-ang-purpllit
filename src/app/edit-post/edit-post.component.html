@@ -1,0 +1,8 @@
+<button (click)="editPost()">Edit Post</button>
+<div *ngIf="selectedPost">
+  <label>Title:</label>
+  <input [(ngModel)]="currentPost.title">
+  <label>Text:</label>
+  <input [(ngModel)]="currentPost.text">
+<button (click)="finishedEditing()">Done!</button>
+</div>

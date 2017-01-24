@@ -10,6 +10,7 @@ import { routing } from './app.routing';
 import { SubpurpllitComponent } from './subpurpllit/subpurpllit.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { NewPostComponent } from './new-post/new-post.component';
+import { EditPostComponent } from './edit-post/edit-post.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NewPostComponent } from './new-post/new-post.component';
     ListSubpurpllitsComponent,
     SubpurpllitComponent,
     PostDetailComponent,
-    NewPostComponent
+    NewPostComponent,
+    EditPostComponent
   ],
   imports: [
     BrowserModule,
