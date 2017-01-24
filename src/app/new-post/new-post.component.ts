@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import {Post} from '../post.model';
 import {PostsService} from '../posts.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-new-post',
@@ -14,23 +15,18 @@ export class NewPostComponent implements OnInit {
   newPost = null;
   subId = null;
 
-  constructor(private postService: PostsService, private route: ActivatedRoute) { }
+  constructor(private postService: PostsService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.route.params.forEach((urlParameterArray) => {
-      this.subId = parseInt(urlParameterArray['id']);
+      this.subId = parseInt(urlParameterArray['subId']);
     });
   }
 
-  newPostForm() {
-    this.newPost = true;
-  }
-  cancel() {
-    this.newPost = null;
-  }
   addPost(title: string, text: string) {
     var newPost = new Post(title, text, this.subId, this.postService.getNextId());
     this.postService.addNewPost(newPost);
     this.newPost = null;
+    this.router.navigate(["subpurpllit", this.subId]);
   }
 }

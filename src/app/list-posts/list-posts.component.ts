@@ -20,6 +20,7 @@ export class ListPostsComponent implements OnInit {
   goToPostDetail(clickedPost: Post){
     this.router.navigate(['post', clickedPost.id]);
   }
+  
 
   ngOnInit() {
     this.route.params.forEach((urlParametersArray) => {
